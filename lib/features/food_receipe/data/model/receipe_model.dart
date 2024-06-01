@@ -14,8 +14,10 @@ class Recipes {
   late bool vegetarian;
   late String sourceName;
   late double pricePerServing;
+  late int healthScore;
   late int id;
   late String title;
+  late int aggregateLikes;
   late int minutes;
   late String image;
   late String instructions;
@@ -27,6 +29,8 @@ class Recipes {
     required this.analyzedInstructions,
     required this.extendedIngredients,
     required this.id,
+    required this.healthScore,
+    required this.aggregateLikes,
     required this.image,
     required this.instructions,
     required this.minutes,
@@ -42,6 +46,8 @@ class Recipes {
     sourceName = json["sourceName"];
     pricePerServing = json["pricePerServing"];
     id = json["id"];
+    healthScore = json["healthScore"];
+    aggregateLikes = json["aggregateLikes"];
     title = json["title"];
     minutes = json["readyInMinutes"];
     image = json["image"];
