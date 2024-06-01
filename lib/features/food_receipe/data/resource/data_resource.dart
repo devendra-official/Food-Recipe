@@ -18,7 +18,6 @@ class DataResourceReceipeImp implements DataResourceReceipe {
       Response response = await client.get(Uri.parse("http://localhost:8080"));
       final data = jsonDecode(response.body);
       if (response.statusCode == 200) {
-        print(data.runtimeType);
         return ReceipeModel.fromJson(data);
       }
       throw ServerException("Server error");

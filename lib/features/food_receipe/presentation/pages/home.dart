@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_receipe/features/food_receipe/data/model/receipe_model.dart';
 import 'package:food_receipe/features/food_receipe/presentation/cubit/receipe_cubit.dart';
+import 'package:food_receipe/features/food_receipe/presentation/pages/details.dart';
 import 'package:food_receipe/features/food_receipe/presentation/utils/widgets/widget.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -23,7 +24,9 @@ class MyHomePage extends StatelessWidget {
             // const SizedBox(height: 10),
             // const Categories(),
             BlocConsumer<ReceipeCubit, ReceipeState>(
-              listener: (context, state) {},
+              listener: (context, state) {
+                if (state is ReceipeFailure) {}
+              },
               builder: (context, state) {
                 if (state is ReceipeSucess) {
                   List<Recipes> recipe = state.receipeModel.recipes;
@@ -32,9 +35,15 @@ class MyHomePage extends StatelessWidget {
                       itemCount: recipe.length,
                       itemBuilder: (context, index) {
                         return RecipeCard(
-                          image: recipe[index].image ?? "",
-                          title: recipe[index].title ?? "invalid",
-                          id: recipe[index].id ?? 1,
+                          tag: recipe[index].id,
+                          onTap: () => {
+                            Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                              return Details(recipes: recipe[index]);
+                            }))
+                          },
+                          image: recipe[index].image,
+                          title: recipe[index].title,
+                          id: recipe[index].id,
                           minutes: recipe[index].minutes.toString(),
                         );
                       },

@@ -45,68 +45,80 @@ class RecipeCard extends StatelessWidget {
     required this.title,
     required this.id,
     required this.minutes,
+    required this.onTap,
+    required this.tag,
   });
 
   final String image;
   final String title;
   final int id;
   final String minutes;
+  final Function onTap;
+  final int tag;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      clipBehavior: Clip.hardEdge,
-      margin: const EdgeInsets.symmetric(vertical: 8),
-      height: 300,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-          color: AppPallete.chipBgColor),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Image.network(
-            image,
-            height: 220,
-            width: double.infinity,
-            fit: BoxFit.cover,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  title,
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyMedium!
-                      .copyWith(fontWeight: FontWeight.bold),
-                ),
-              ],
+    return GestureDetector(
+      onTap: () {
+        onTap();
+      },
+      child: Container(
+        clipBehavior: Clip.hardEdge,
+        margin: const EdgeInsets.symmetric(vertical: 8),
+        height: 300,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            color: AppPallete.chipBgColor),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Hero(
+              tag: tag,
+              child: Image.network(
+                image,
+                height: 220,
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "ID: ${id.toString()}",
-                  style: const TextStyle(fontWeight: FontWeight.bold),
-                ),
-                Row(
-                  children: [
-                    const Icon(Icons.watch),
-                    Text(
-                      "${minutes}min",
-                      style: const TextStyle(fontWeight: FontWeight.bold),
-                    )
-                  ],
-                )
-              ],
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    title,
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyMedium!
+                        .copyWith(fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "ID: ${id.toString()}",
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  Row(
+                    children: [
+                      const Icon(Icons.watch),
+                      Text(
+                        "${minutes}min",
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
