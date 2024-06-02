@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_receipe/core/theme/theme.dart';
-import 'package:food_receipe/features/food_receipe/presentation/cubit/receipe_cubit.dart';
-import 'package:food_receipe/features/food_receipe/presentation/pages/home.dart';
+import 'package:food_receipe/features/random_food_receipe/presentation/cubit/receipe_cubit.dart';
+import 'package:food_receipe/features/random_food_receipe/presentation/pages/home.dart';
 import 'package:food_receipe/init_dependency.dart';
 
 void main() {

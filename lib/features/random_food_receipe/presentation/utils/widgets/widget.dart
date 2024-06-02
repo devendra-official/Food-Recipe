@@ -28,10 +28,14 @@ class Categories extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
-          CustomChip(text: "All"),
-          CustomChip(text: "Deserts"),
-          CustomChip(text: "Drivern"),
+          CustomChip(text: "Pizza"),
+          CustomChip(text: "Ice-cream"),
           CustomChip(text: "Chocolate"),
+          CustomChip(text: "Drinks"),
+          CustomChip(text: "Burger"),
+          CustomChip(text: "Cheese"),
+          CustomChip(text: "Rice"),
+          CustomChip(text: "Gobi"),
         ],
       ),
     );
@@ -65,12 +69,13 @@ class RecipeCard extends StatelessWidget {
       child: Container(
         clipBehavior: Clip.hardEdge,
         margin: const EdgeInsets.symmetric(vertical: 8),
-        height: 300,
+        height: 320,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
-            color: AppPallete.chipBgColor),
+            color: AppPallete.recipeBox),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Hero(
               tag: tag,
@@ -99,7 +104,7 @@ class RecipeCard extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              padding: const EdgeInsets.all(8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -109,7 +114,7 @@ class RecipeCard extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      const Icon(Icons.watch),
+                      const Icon(Icons.timelapse_outlined),
                       Text(
                         "${minutes}min",
                         style: const TextStyle(fontWeight: FontWeight.bold),

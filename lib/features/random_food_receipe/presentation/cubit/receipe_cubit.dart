@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:food_receipe/features/food_receipe/data/model/receipe_model.dart';
-import 'package:food_receipe/features/food_receipe/domain/usecase/receipe_usecase.dart';
+import 'package:food_receipe/features/random_food_receipe/data/model/receipe_model.dart';
+import 'package:food_receipe/features/random_food_receipe/domain/usecase/receipe_usecase.dart';
 
 part 'receipe_state.dart';
 

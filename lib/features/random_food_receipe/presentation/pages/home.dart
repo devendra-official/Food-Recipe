@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:food_receipe/features/food_receipe/data/model/receipe_model.dart';
-import 'package:food_receipe/features/food_receipe/presentation/cubit/receipe_cubit.dart';
-import 'package:food_receipe/features/food_receipe/presentation/pages/details.dart';
-import 'package:food_receipe/features/food_receipe/presentation/utils/widgets/widget.dart';
+import 'package:food_receipe/features/random_food_receipe/data/model/receipe_model.dart';
+import 'package:food_receipe/features/random_food_receipe/presentation/cubit/receipe_cubit.dart';
+import 'package:food_receipe/features/random_food_receipe/presentation/pages/details.dart';
+import 'package:food_receipe/features/random_food_receipe/presentation/utils/widgets/widget.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});

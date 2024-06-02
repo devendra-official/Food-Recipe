@@ -1,4 +1,4 @@
 class ServerException implements Exception {
   final String message;
-  ServerException(this.message);
+  ServerException([this.message = "something went wrong!"]);
 }

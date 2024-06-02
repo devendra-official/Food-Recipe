@@ -1,0 +1,3 @@
+https://api.spoonacular.com/recipes/715538/similar // GET SIMILAR RECIPES
+https://api.spoonacular.com/recipes/random?apiKey=517a621042ba41948268e17392c88bd1&number=20 // GET RANDOM 20 RECIPES
+https://api.spoonacular.com/recipes/complexSearch?query=ice-cream&apiKey=517a621042ba41948268e17392c88bd1 // SEARCH
